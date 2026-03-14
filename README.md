@@ -1,16 +1,161 @@
-# React + Vite
+# Inventory Management System (IMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a **simple Inventory Management System (IMS)** designed to manage and track product stock inside a warehouse.
+It replaces manual inventory tracking (Excel sheets or registers) with a centralized digital system.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application allows users to:
 
-## React Compiler
+* Create and manage products
+* Track incoming stock (receipts)
+* Track outgoing stock (deliveries)
+* Monitor current inventory levels
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frontend**
+
+* React.js
+* Vite
+
+**Backend**
+
+* Python (FastAPI / Django REST API)
+
+**Database**
+
+* PostgreSQL
+
+---
+
+## Features
+
+* Product Management (Create / View products)
+* Receive stock from vendors
+* Deliver stock to customers
+* Automatic stock quantity update
+* Inventory tracking
+* Simple dashboard for stock overview
+
+---
+
+## Project Structure
+
+```
+project-root
+│
+├── frontend
+│   ├── React + Vite application
+│   └── UI for managing inventory
+│
+├── backend
+│   ├── Python API
+│   ├── Business logic for inventory
+│   └── Database connection
+│
+└── database
+    └── PostgreSQL tables for products and transactions
+```
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```
+git clone <repository-url>
+cd inventory-system
+```
+
+---
+
+### 2. Backend Setup
+
+Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+Run backend server
+
+```
+python main.py
+```
+
+or
+
+```
+uvicorn main:app --reload
+```
+
+---
+
+### 3. Frontend Setup
+
+Navigate to frontend folder
+
+```
+cd frontend
+```
+
+Install dependencies
+
+```
+npm install
+```
+
+Start development server
+
+```
+npm run dev
+```
+
+---
+
+### 4. Database Setup
+
+Create PostgreSQL database
+
+```
+CREATE DATABASE inventory_db;
+```
+
+Update database configuration in the backend settings file with:
+
+* Database name
+* Username
+* Password
+* Host
+* Port
+
+---
+
+## API Endpoints (Example)
+
+| Method | Endpoint  | Description      |
+| ------ | --------- | ---------------- |
+| POST   | /products | Create product   |
+| GET    | /products | Get all products |
+| POST   | /receive  | Add stock        |
+| POST   | /deliver  | Remove stock     |
+
+---
+
+## Future Improvements
+
+* User authentication
+* Multi-warehouse support
+* Stock alerts
+* Dashboard analytics
+* Barcode scanning
+
+---
+
+## Author
+
+Developed as a learning project to demonstrate **inventory management and backend API development using Python and React**.
